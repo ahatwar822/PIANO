@@ -1,0 +1,296 @@
+// 🎹 Piano SCSS
+
+// Variables
+$font-family: 'Poppins', sans-serif;
+$bg-dark: #141414aa;
+$border-light: rgba(255, 255, 255, 0.30);
+$white: #fff;
+$gray: #B2B2B2;
+$dark-gray: #4B4B4B;
+
+// Global reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.bg_video {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.container {
+    padding: 35px 40px;
+    border-radius: 20px;
+    background: $bg-dark;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid $border-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all ease 0.4s;
+
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $gray;
+
+        h2 {
+            font-size: 2.5rem; // made slightly bigger for focus
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: "Dancing Script", cursive;
+        }
+    }
+
+    .piano-keys {
+        display: flex;
+        list-style: none;
+        margin: 40px 0;
+
+        .key {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            text-transform: uppercase;
+
+            span {
+                position: absolute;
+                bottom: 20px;
+                width: 100%;
+                color: #A2A2A2;
+                font-size: 1.13rem;
+                text-align: center;
+            }
+
+            &.hide {
+                span {
+                    display: none;
+                }
+            }
+
+            &.white {
+                height: 230px;
+                width: 70px;
+                border-radius: 8px;
+                border: 1px solid #000;
+                background: linear-gradient(transparent 1%, $white 95%, #eee 40%);
+
+                &.active {
+                    box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+                    background: linear-gradient(to bottom, $white 0%, #eee 100%);
+                }
+            }
+
+            &.black {
+                z-index: 2;
+                width: 44px;
+                height: 140px;
+                margin: 0 -22px;
+                border-radius: 0 0 5px 5px;
+                background: linear-gradient(transparent 1%, rgb(61, 61, 61) 20%, #000);
+                box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+
+
+                span {
+                    bottom: 13px;
+                    color: #888888;
+                }
+
+                &.active {
+                    box-shadow: inset -5px -10px 10px rgba(255, 255, 255, 0.1);
+                    background: linear-gradient(to bottom, #000, #434343);
+                }
+            }
+        }
+    }
+
+    footer {
+        margin-top: auto;
+        text-align: center;
+        padding: 15px 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 0.7rem;
+        color: $gray;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+            color: $white;
+            font-weight: 500;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+    }
+}
+
+
+// 📱 Mobile (Portrait) - Rotate Piano
+@media screen and (max-width: 600px) {
+  .container {
+    transform: rotate(90deg);
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    header {
+      h2{
+        font-size: 1.7rem;
+      }
+    }
+
+    .piano-keys {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      margin: 10px 0;
+
+      .key.white {
+        width: 60px;
+        height: 160px;
+      }
+
+      .key.black {
+        width: 40px;
+        height: 100px;
+        margin: 0 -20px;
+      }
+    }
+  }
+
+  footer {
+    font-size: 0.4rem;
+    gap: 10px;
+    padding: 10px 5px;
+  }
+}
+
+// 📲 Tablet View (Landscape & Portrait) 
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    padding: 20px 30px;
+
+    .piano-keys {
+      margin-top: 25px;
+
+      .key.white {
+        width: 60px;
+        height: 190px;
+      }
+
+      .key.black {
+        width: 35px;
+        height: 120px;
+        margin: 0 -18px;
+      }
+    }
+
+    footer {
+      font-size: 0.8rem;
+      gap: 8px;
+    }
+  }
+}
+
+// 💻 Laptop/Desktop View
+@media screen and (min-width: 1025px) {
+  .container {
+    padding: 35px 40px;
+
+    .piano-keys {
+      margin-top: 40px;
+
+      .key.white {
+        width: 70px;
+        height: 230px;
+      }
+
+      .key.black {
+        width: 44px;
+        height: 140px;
+        margin: 0 -22px;
+      }
+    }
+
+    footer {
+      font-size: 1rem;
+    }
+  }
+}
+
+
+
+
+
+
+
+// 🔹 Responsive Breakpoints
+// @media screen and (max-width: 815px) {
+//   .container {
+//     padding: 25px;
+//     position: absolute;
+//     transform: rotate(-90deg);
+
+//     header {
+//       flex-direction: column;
+
+//       h2 {
+//         margin-bottom: 13px;
+//       }
+//     }
+
+//     .piano-keys {
+//       margin-top: 20px;
+
+//     //   .key:nth-child(9),
+//     //   .key:nth-child(10) {
+//     //     display: none;
+//       }
+
+//       .black {
+//         height: 100px;
+//         width: 40px;
+//         margin: 0 -20px;
+//       }
+
+//       .white {
+//         height: 180px;
+//         width: 60px;
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 615px) {
+//   .piano-keys {
+//     .key:nth-child(13),
+//     .key:nth-child(14),
+//     .key:nth-child(15),
+//     .key:nth-child(16),
+//     .key:nth-child(17) {
+//       display: none;
+//     }
+
+//     .white {
+//       width: 50px;
+//     }
+//   }
+// }

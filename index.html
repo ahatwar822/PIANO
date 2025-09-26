@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano | Play</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- google fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+    </style>
+</head>
+
+<body>
+    <!-- background video -->
+    <video autoplay muted loop playsinline onloadedmetadata="this.playbackRate=0.4" class="bg_video">
+        <source src="/assets/Baground/b_video.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div class="container">
+        <header>
+            <h2>PIANOBAR</h2>
+
+        </header>
+        <ul class="piano-keys">
+            <li class="key white" id="a"><span>a</span></li>
+            <li class="key black" id="w"><span>w</span></li>
+            <li class="key white" id="s"><span>s</span></li>
+            <li class="key black" id="e"><span>e</span></li>
+            <li class="key white" id="d"><span>d</span></li>
+            <li class="key white" id="f"><span>f</span></li>
+            <li class="key black" id="t"><span>t</span></li>
+            <li class="key white" id="g"><span>g</span></li>
+            <li class="key black" id="y"><span>y</span></li>
+            <li class="key white" id="h"><span>h</span></li>
+            <li class="key black" id="u"><span>u</span></li>
+            <li class="key white" id="j"><span>j</span></li>
+            <li class="key white" id="k"><span>k</span></li>
+            <li class="key black" id="o"><span>o</span></li>
+            <li class="key white" id="l"><span>l</span></li>
+            <li class="key black" id="p"><span>p</span></li>
+            <li class="key white" id=";"><span>;</span></li>
+        </ul>
+
+        <footer>
+            <p>Copyright &copy; 2025 | All Rights Reserved</p>
+            <p>Developed by <span>@Hatwar_A.A.</span></p>
+        </footer>
+    </div>
+
+    <!-- 🎵 Audio Files -->
+  <audio id="sound_a" src="assets/tunes/tunes/a.wav"></audio>
+  <audio id="sound_w" src="assets/tunes/tunes/w.wav"></audio>
+  <audio id="sound_s" src="assets/tunes/tunes/s.wav"></audio>
+  <audio id="sound_e" src="assets/tunes/tunes/e.wav"></audio>
+  <audio id="sound_d" src="assets/tunes/tunes/d.wav"></audio>
+  <audio id="sound_f" src="assets/tunes/tunes/f.wav"></audio>
+  <audio id="sound_t" src="assets/tunes/tunes/t.wav"></audio>
+  <audio id="sound_g" src="assets/tunes/tunes/g.wav"></audio>
+  <audio id="sound_y" src="assets/tunes/tunes/y.wav"></audio>
+  <audio id="sound_h" src="assets/tunes/tunes/h.wav"></audio>
+  <audio id="sound_u" src="assets/tunes/tunes/u.wav"></audio>
+  <audio id="sound_j" src="assets/tunes/tunes/j.wav"></audio>
+  <audio id="sound_k" src="assets/tunes/tunes/k.wav"></audio>
+  <audio id="sound_o" src="assets/tunes/tunes/o.wav"></audio>
+  <audio id="sound_l" src="assets/tunes/tunes/l.wav"></audio>
+  <audio id="sound_p" src="assets/tunes/tunes/p.wav"></audio>
+  <audio id="sound_;" src="assets/tunes/tunes/;.wav"></audio>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
